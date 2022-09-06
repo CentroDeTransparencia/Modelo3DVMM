@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.rc-slider-mark-text {
+  font-size: 10px;
+  font-size: 'Poppins';
+}
+
+.tooltip-inner {
+  max-width: 200px;
+  color: #fff;
+  text-align: start;
+  background-color: #4cb286;
+  font-size: 12px;
+  font-family: 'Poppins';
+}
+
+::-webkit-scrollbar {
+    background-color: #1F2132;
+
+    width: 1rem}
+
+::-webkit-scrollbar-thumb {
+    background-color:#fcf9eb
+    
+     
+     !important;
+}
+
+.rc-slider-track {
+    background-color: #4cb286;
+  }
+  
+  .rc-slider-dot-active {  
+    border-color: #4cb286;
+    border: solid 2px #4cb286;
+  }
+  
+  .rc-slider-handle {
+    background-color: #4cb286;
+    border-color: #4cb286;
+  }
+  
+  .rc-slider-handle:hover {
+    border-color: #4cb286;
+  }
+  
+  .rc-slider-handle-active:active {
+    border-color: #4cb286;
+  }
+
+::-webkit-scrollbar:horizontal {
+    height: 0;
+    width: 0;
+    display: none;
+  }
+  
+::-webkit-scrollbar-thumb:horizontal {
+    display: none;
+  }
+
+.scrollable-element { scrollbar-width: none; }
+
+#header{
+    background-color: #002c35;
+
+}
+
+#footer{
+    background-color: #002c35;
+
+}
+
+div.modal-header {
+  background-color:#002c35;
+}
+
+div.modal-body {
+  background-color:#002c35;
+}
+
+.pretty_container {
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* border-radius: 5px;
+    background-color: #094958;
+    margin: 2px;
+    padding: 10px;
+    position: relative;
+    box-shadow: 2px 2px 2px lightgray; */
+  }
+
+body {
+    overflow-x: hidden;
+    background-color:#094958;
+    color:#fcf9eb;
+    font-family: 'Poppins', sans-serif;
+   
+}	
+
+div.card.bg-dark {
+    background-color:#094958;
+}
+
+.card-body {
+    
+    background-color:#094958;
+   
+}
+
+.card-title {
+
+    color: #fcf9eb;
+}
+
+.dash-debug-menu {
+    background-color: #4cb286;
+}
+
+h2.card-text {
+
+    font-weight: bold;
+
+}
+
+h2.card-title {
+
+    font-weight: bold;
+    color:#fcf9eb
+
+}
+
+h3.card-title {
+    font-weight: bold;
+}
+.DateInput_input {
+    font-size: 18px;
+    height: 20px;
+    
+  }
+/* .Select-menu-outer {
+    font-size: 12px;
+}  */
+
+
+/* .CalendarDay{
+    Height: 30px;
+    width: 5px;
+    z-index: 3 ;
+
+}
+
+.CalendarMonth_caption{
+     Height: 30px;
+     width: 20px;
+     z-index: 3 ;
+
+} */
+/* .DayPicker_transitionContainer.DayPicker_transitionContainer_1.DayPicker_transitionContainer__horizontal.DayPicker_transitionContainer__horizontal_2 {
+    font-size: 8px;
+} */
