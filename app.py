@@ -645,21 +645,18 @@ card_main=html.Div(
             [
             html.H4('Visualización:'),
             html.Div([
-            html.Div([html.H5("Transparencia:", className="helps1 column"),
-
-            dbc.Button(
-            "?",
-            id='tTrans',
-            color="info",
-            className="helps2 column quest button",
-            n_clicks=0, size="sm"),
-            ],
+            html.Div([html.H5("Transparencia:", className="helps1 column"), 
+                      html.A(
+                          html.H5("?"),
+                          id='tTrans',
+                          className="column helps2")
+                      ],
             className='row flex-display'),
             dbc.Tooltip(
             "Usa la barra deslizadora para seleccionar diferentes niveles de transparencia de las superficies tridimensionales desplegadas. 0 = Transparencia total. 1 = Sin transparencia. Para desactivar la topografía selección un valor de 0.",
             target='tTrans',
             ),
-            html.H6("Topografía:", className="card-subtitle",style= {"margin-top": "10px"}),
+            html.H6("Topografía:", className="card-subtitle",style= {"margin-top": "10px","margin-left":"15px"}),
             dcc.Slider(
                 id='TOPO',
                 min=0,
@@ -669,7 +666,7 @@ card_main=html.Div(
                 tooltip={"placement": "bottom", "always_visible": False},),
                 #Condicionales de geologia-Tope Grupo real
                 html.Div(id='GREAL', children=[
-                        html.H6("Tope Grupo Real:", className="card-subtitle"),
+                        html.H6("Tope Grupo Real:", className="card-subtitle",style={"margin-left":"15px"}),
                         # Create element to hide/show, in this case a slider
                         dcc.Slider(id='TGREAL',
                                 min=0,
@@ -681,7 +678,7 @@ card_main=html.Div(
                     ], style= {'display': 'none',"margin-top": "10px",'marginLeft':'12px'}),
                 #Condicionales de geologia-Tope Grupo real
                 html.Div(id='COLORADO', children=[
-                        html.H6("Tope Formación Colorado:", className="card-subtitle"),
+                        html.H6("Tope Formación Colorado:", className="card-subtitle",style={"margin-left":"15px"}),
                         # Create element to hide/show, in this case a slider
                         dcc.Slider(id='TCOLORADO',
                                 min=0,
@@ -693,7 +690,7 @@ card_main=html.Div(
                     ], style= {'display': 'none',"margin-top": "10px",'marginLeft':'12px'}),
                 #Condicionales de geologia-Tope Fm Mugrosa
                 html.Div(id='MUGROSA', children=[
-                        html.H6("Tope Formación Mugrosa:", className="card-subtitle"),
+                        html.H6("Tope Formación Mugrosa:", className="card-subtitle",style={"margin-left":"15px"}),
                         # Create element to hide/show, in this case a slider
                         dcc.Slider(id='TMUGROSA',
                                 min=0,
@@ -705,7 +702,7 @@ card_main=html.Div(
                     ], style= {'display': 'none',"margin-top": "10px",'marginLeft':'12px'}),
                 #Condicionales de geologia-Tope Grupo real
                 html.Div(id='CHORROS', children=[
-                        html.H6("Tope Formación Chorros:", className="card-subtitle"),
+                        html.H6("Tope Formación Chorros:", className="card-subtitle",style={"margin-left":"15px"}),
                         # Create element to hide/show, in this case a slider
                         dcc.Slider(id='TCHORROS',
                                 min=0,
@@ -717,7 +714,7 @@ card_main=html.Div(
                     ], style= {'display': 'none',"margin-top": "10px",'marginLeft':'12px'}),
                 #Condicionales de geologia-Tope Grupo real
                 html.Div(id='EOCMED', children=[
-                        html.H6("Discordancia del Eoceno Medio:", className="card-subtitle"),
+                        html.H6("Discordancia del Eoceno Medio:", className="card-subtitle",style={"margin-left":"15px"}),
                         # Create element to hide/show, in this case a slider
                         dcc.Slider(id='TEOCMED',
                                 min=0,
@@ -729,7 +726,7 @@ card_main=html.Div(
                     ], style= {'display': 'none',"margin-top": "10px",'marginLeft':'12px'}),
                 #Condicionales de geologia-Fm Paja
                 html.Div(id='PAJA', children=[
-                        html.H6("Formación Paja:", className="card-subtitle"),
+                        html.H6("Formación Paja:", className="card-subtitle",style={"margin-left":"15px"}),
                         # Create element to hide/show, in this case a slider
                         dcc.Slider(id='TPAJA',
                                 min=0,
@@ -741,7 +738,7 @@ card_main=html.Div(
                     ], style= {'display': 'none',"margin-top": "10px",'marginLeft':'12px'}),
                 #Condicionales de geologia-Fm Salada
                 html.Div(id='SALADA', children=[
-                        html.H6("Formación Salada:", className="card-subtitle"),
+                        html.H6("Formación Salada:", className="card-subtitle",style={"margin-left":"15px"}),
                         # Create element to hide/show, in this case a slider
                         dcc.Slider(id='TSALADA',
                                 min=0,
@@ -753,7 +750,7 @@ card_main=html.Div(
                     ], style= {'display': 'none',"margin-top": "10px",'marginLeft':'12px'}),
                 #Condicionales de geologia-Fm Simiti
                 html.Div(id='SIMITI', children=[
-                        html.H6("Formación Simiti:", className="card-subtitle"),
+                        html.H6("Formación Simiti:", className="card-subtitle",style={"margin-left":"15px"}),
                         # Create element to hide/show, in this case a slider
                         dcc.Slider(id='TSIMITI',
                                 min=0,
@@ -765,7 +762,7 @@ card_main=html.Div(
                     ], style= {'display': 'none',"margin-top": "10px",'marginLeft':'12px'}),
                 #Condicionales de geologia-Fm Galembo
                 html.Div(id='GALEMBO', children=[
-                        html.H6("Formación Galembo:", className="card-subtitle"),
+                        html.H6("Formación Galembo:", className="card-subtitle",style={"margin-left":"15px"}),
                         # Create element to hide/show, in this case a slider
                         dcc.Slider(id='TGALEMBO',
                                 min=0,
@@ -777,7 +774,7 @@ card_main=html.Div(
                     ], style= {'display': 'none',"margin-top": "10px",'marginLeft':'12px'}),
 		#Cira Shale
                 html.Div(id='CIRASHALE', children=[
-                        html.H6("Cira Shale (ECP):", className="card-subtitle"),
+                        html.H6("Cira Shale (ECP):", className="card-subtitle",style={"margin-left":"15px"}),
                         # Create element to hide/show, in this case a slider
                         dcc.Slider(id='TCIRASHALE',
                                 min=0,
@@ -789,7 +786,7 @@ card_main=html.Div(
                     ], style= {'display': 'none',"margin-top": "10px",'marginLeft':'12px'}),
 		#Bagre
                 html.Div(id='BAGRE', children=[
-                        html.H6("Formación Bagre (ECP):", className="card-subtitle"),
+                        html.H6("Formación Bagre (ECP):", className="card-subtitle",style={"margin-left":"15px"}),
                         # Create element to hide/show, in this case a slider
                         dcc.Slider(id='TBAGRE',
                                 min=0,
@@ -801,7 +798,7 @@ card_main=html.Div(
                     ], style= {'display': 'none',"margin-top": "10px",'marginLeft':'12px'}),
 		#Chontorales
                 html.Div(id='CHONTORALES', children=[
-                        html.H6("Formación Chontorales (ECP):", className="card-subtitle"),
+                        html.H6("Formación Chontorales (ECP):", className="card-subtitle",style={"margin-left":"15px"}),
                         # Create element to hide/show, in this case a slider
                         dcc.Slider(id='TCHONTORALES',
                                 min=0,
@@ -813,7 +810,7 @@ card_main=html.Div(
                     ], style= {'display': 'none',"margin-top": "10px",'marginLeft':'12px'}),
 		#Colorado
                 html.Div(id='COLORADOH', children=[
-                        html.H6("Formación Colorado (ECP):", className="card-subtitle"),
+                        html.H6("Formación Colorado (ECP):", className="card-subtitle",style={"margin-left":"15px"}),
                         # Create element to hide/show, in this case a slider
                         dcc.Slider(id='TCOLORADOH',
                                 min=0,
@@ -825,7 +822,7 @@ card_main=html.Div(
                     ], style= {'display': 'none',"margin-top": "10px",'marginLeft':'12px'}),
 		#Enrejado
                 html.Div(id='ENREJADO', children=[
-                        html.H6("Formación Enrejado (ECP):", className="card-subtitle"),
+                        html.H6("Formación Enrejado (ECP):", className="card-subtitle",style={"margin-left":"15px"}),
                         # Create element to hide/show, in this case a slider
                         dcc.Slider(id='TENREJADO',
                                 min=0,
@@ -837,7 +834,7 @@ card_main=html.Div(
                     ], style= {'display': 'none',"margin-top": "10px",'marginLeft':'12px'}),
 		#Esmeraldas
                 html.Div(id='ESMERALDAS', children=[
-                        html.H6("Formación Esmeraldas (ECP):", className="card-subtitle"),
+                        html.H6("Formación Esmeraldas (ECP):", className="card-subtitle",style={"margin-left":"15px"}),
                         # Create element to hide/show, in this case a slider
                         dcc.Slider(id='TESMERALDAS',
                                 min=0,
@@ -849,7 +846,7 @@ card_main=html.Div(
                     ], style= {'display': 'none',"margin-top": "10px",'marginLeft':'12px'}),
 		#Hiel
                 html.Div(id='HIEL', children=[
-                        html.H6("Formación Hiel (ECP):", className="card-subtitle"),
+                        html.H6("Formación Hiel (ECP):", className="card-subtitle",style={"margin-left":"15px"}),
                         # Create element to hide/show, in this case a slider
                         dcc.Slider(id='THIEL',
                                 min=0,
@@ -861,7 +858,7 @@ card_main=html.Div(
                     ], style= {'display': 'none',"margin-top": "10px",'marginLeft':'12px'}),
 		#Lluvia
                 html.Div(id='LLUVIA', children=[
-                        html.H6("Formación Lluvia (ECP):", className="card-subtitle"),
+                        html.H6("Formación Lluvia (ECP):", className="card-subtitle",style={"margin-left":"15px"}),
                         # Create element to hide/show, in this case a slider
                         dcc.Slider(id='TLLUVIA',
                                 min=0,
@@ -873,7 +870,7 @@ card_main=html.Div(
                     ], style= {'display': 'none',"margin-top": "10px",'marginLeft':'12px'}),
 		#Mugrosa
                 html.Div(id='MUGROSAH', children=[
-                        html.H6("Formación Mugrosa (ECP):", className="card-subtitle"),
+                        html.H6("Formación Mugrosa (ECP):", className="card-subtitle",style={"margin-left":"15px"}),
                         # Create element to hide/show, in this case a slider
                         dcc.Slider(id='TMUGROSAH',
                                 min=0,
@@ -884,13 +881,14 @@ card_main=html.Div(
 
                     ], style= {'display': 'none',"margin-top": "10px",'marginLeft':'12px'}),
            #Fin condicionales
-            html.Div([html.H5("Exageración vertical:", className="helps1 column"),dbc.Button(
-            "?",
-            id='tExg',
-            color="info",
-            className="helps2 column quest button",
-            n_clicks=0, size="sm"
-        ),],className='row flex-display'),
+            html.Div([html.H5("Exageración vertical:", className="helps1 column"),
+                      
+                      html.A(children=html.H5("?"),
+                             id='tExg',
+                             className="column helps2"
+                             )
+                      ],
+                     className='row flex-display'),
             #html.H5("Exageración vertical:", className="card-subtitle",id='tExg',style= {"margin-top": "10px"}),
             dbc.Tooltip(
             "Selecciona diferentes niveles de exageración vertical para aumentar o disminuir la escala vertical de la gráfica 3D con respecto a la escala horizontal. ",
@@ -903,13 +901,13 @@ card_main=html.Div(
                 step=1,
                 value=2,
                 tooltip={"placement": "bottom", "always_visible": False}),
-                html.Div([html.H5("Perfil:", className="helps1 column"),dbc.Button(
-                "?",
-                id='tPerfil',
-                color="info",
-                className="helps2 column quest button",
-                n_clicks=0, size="sm"
-            ),],className='row flex-display',style={'marginBottom': 5, 'marginTop': 10}), 
+                html.Div([html.H5("Perfil:", className="helps1 column"),
+                          html.A(children=html.H5("?"),    
+                                 id='tPerfil',
+                                 className="column helps2"
+                                 )
+                          ],
+                         className='row flex-display',style={'marginBottom': 5, 'marginTop': 10}), 
                 #Perfil
                 dbc.Tooltip(
                 "Puedes crear un perfil que se despliega en la parte inferior de la gráfica 3D, para visualizar diferentes datos seleccionados dentro de un margen de distancia o buffer de 0.1° (~11 km). Selecciona las coordenadas en latitud y longitud del punto inicial y punto final.",
@@ -923,13 +921,13 @@ card_main=html.Div(
                 html.Div([dcc.Input(id="Longitud 2", type="number", placeholder="Longitud 2", min=loi, max=los, step=0.01,value=los,style={'marginRight':'10px'}),
                 dcc.Input(id="Latitud 2", type="number", placeholder="Latitud 2", min=lai, max=las, step=0.01,value=las,debounce=True)],style={'font-size': '12px'})],style={'marginLeft': '12px'})],
                 style={'marginLeft':'10px'}),
-            html.Div([html.H4("Cartografía base:", className="helps1 column"),dbc.Button(
-            "?",
-            id='tCart',
-            color="info",
-            className="helps2 column quest button",
-            n_clicks=0, size="sm"
-        ),],className='row flex-display',style={'marginBottom': 1, 'marginTop': 10}),                
+            html.Div([html.H4("Cartografía base:", className="helps1 column"),
+                      html.A(children=html.H5("?"),    
+                             id='tCart',
+                             className="column helps2"
+                             )
+                      ],
+                     className='row flex-display',style={'marginBottom': 1, 'marginTop': 10}),                
             #html.H5("Cartografía base:",id='tCart', className="card-subtitle",style= {"margin-top": "10px"}),
             dbc.Tooltip(
             "Selecciona diferentes capas de datos para referencia de ubicación básica en el territorio.",
@@ -950,13 +948,13 @@ card_main=html.Div(
                         multi=True)],style={'font-size': '12px'}),
             html.H4('Sismicidad:'),
             html.Div([
-            html.Div([html.H5("Magnitudes:", className="helps1 column"),dbc.Button(
-            "?",
-            id='tMag',
-            color="info",
-            className="helps2 column quest button",
-            n_clicks=0, size="sm"
-        ),],className='row flex-display'),
+            html.Div([html.H5("Magnitudes:", className="helps1 column"),
+                      html.A(children=html.H5("?"),    
+                                 id='tMag',
+                                 className="column helps2"
+                                 )
+                      ],
+                     className='row flex-display'),
             #html.Div(id='mag_div', children=[html.H5("Magnitudes:", className="card-subtitle",id='tMag'),
             dbc.Tooltip(
             "Filtra los sismos desplegados en la gráfica 3D a partir de sus magnitudes. Puedes mover los círculos de cada extremo de la barra deslizadora para restringir el rango de las magnitudes.",
@@ -978,13 +976,13 @@ card_main=html.Div(
                 allowCross=False,
                 tooltip={"placement": "bottom", "always_visible": False}
             )],style={'marginBottom': 30, 'marginTop': 10}),
-            html.Div([html.H5("Profundidad:", className="helps1 column"),dbc.Button(
-            "?",
-            id='tDep',
-            color="info",
-            className="helps2 column quest button",
-            n_clicks=0, size="sm"
-        ),],className='row flex-display',style={'marginBottom': 1, 'marginTop': 20}),            
+            html.Div([html.H5("Profundidad:", className="helps1 column"),
+                      html.A(children=html.H5("?"), 
+                             id='tDep',
+                             className="column helps2"
+                             )
+                      ],
+                     className='row flex-display',style={'marginBottom': 1, 'marginTop': 20}),            
             #html.Div(id='dep_div', children=[html.H5("Profundidad (m):", className="card-subtitle",id='tDep'),
             html.Div([dbc.Tooltip(
             "Filtra los sismos desplegados en la gráfica 3D a partir de sus profundidades. Puedes mover los círculos de cada extremo de la barra deslizadora para restringir el rango de profundidad. La unidad de profundidad es m = metros.",
@@ -997,7 +995,7 @@ card_main=html.Div(
                 step=100,
                 value=[np.abs(df_sismos['PROF. (m)'].max()),np.abs(df_sismos['PROF. (m)'].min())],
                 marks={
-                        0: {'label':'0 km', 'style': {'color': 'white'}},
+                        0: {'label':'0 m', 'style': {'color': 'white'}},
                         8000: {'label':'8000 m', 'style': {'color': 'white'}},
                         16000: {'label':'16000 m', 'style': {'color': 'white'}},
                         24000: {'label':'24000 m', 'style': {'color': 'white'}},
@@ -1005,13 +1003,13 @@ card_main=html.Div(
                 allowCross=False,
                 tooltip={"placement": "bottom", "always_visible": False}
             )],style={'marginBottom': 40, 'marginTop': 9}),
-            html.Div([html.H5("Fecha:", className="helps1 column"),dbc.Button(
-            "?",
-            id='tFecha',
-            color="info",
-            className="helps2 column quest button",
-            n_clicks=0, size="sm"
-        ),],className='row flex-display',style={'marginBottom': 5, 'marginTop': 20}), 
+            html.Div([html.H5("Fecha:", className="helps1 column"),
+                      html.A(children=html.H5("?"), 
+                             id='tFecha',
+                             className="column helps2"
+                             )
+                      ],
+                     className='row flex-display',style={'marginBottom': 5, 'marginTop': 20}), 
             #html.H5("Fecha:",id='tFecha', className="card-subtitle",style= {"margin-top": "10px"}),
             dbc.Tooltip(
             "Selecciona la fecha inicial y fecha final del registro de sismos que quieres desplegar.",
@@ -1032,13 +1030,13 @@ card_main=html.Div(
                     #initial_visible_month=df_sismos['FECHA - HORA UTC'].min(),
                     reopen_calendar_on_clear=False
                 ),style={'font-size': '12px'}),
-            html.Div([html.H5("Variables (SGC):", className="helps1 column"),dbc.Button(
-            "?",
-            id="tSeis",
-            color="info",
-            className="helps2 column quest button",
-            n_clicks=0, size="sm"
-        ),],className='row flex-display',style={'marginBottom': 1, 'marginTop': 10}),             
+            html.Div([html.H5("Variables (SGC):", className="helps1 column"),
+                      html.A(children=html.H5("?"), 
+                             id='tSeis',
+                             className="column helps2"
+                             )
+                      ],
+                     className='row flex-display',style={'marginBottom': 1, 'marginTop': 10}),             
             #html.H5("Variables de sismicidad desplegadas (SGC):",id='tSeis', className="card-subtitle",style= {"margin-top": "10px"}),
             dbc.Tooltip(
             "Selecciona las diferentes variables de los datos de sismicidad del Servicio Geológico Colombiano (SGC) que quieres desplegar. Puedes también elegir si mostrar o no la sismicidad en la gráfica 3D.",
@@ -1061,13 +1059,13 @@ card_main=html.Div(
                     )],style={'font-size': '12px',})],style={'marginLeft':'10px'}),
 #----------------------------------
             #html.H5("_______________________", className="card-subtitle"),
-            html.Div([html.H4("Geología:", className="helps1 column"),dbc.Button(
-            "?",
-            id='tGeo',
-            color="info",
-            className="helps2 column quest button",
-            n_clicks=0, size="sm"
-        ),],className='row flex-display',style={'marginBottom': 1, 'marginTop': 10}),  
+            html.Div([html.H4("Geología:", className="helps1 column"),
+                      html.A(children=html.H5("?"),                                
+                             id='tGeo',
+                             className="column helps2"
+                             )
+                      ],
+                     className='row flex-display',style={'marginBottom': 1, 'marginTop': 10}),  
             #html.H5("Geología:",id='tGeo', className="card-subtitle",style= {"margin-top": "10px"}),
             dbc.Tooltip(
             "Selecciona capas de datos relacionados con la geología de superficie y del subsuelo.",
@@ -1104,13 +1102,13 @@ card_main=html.Div(
                         value=[],
                         multi=True)],style={'font-size': '12px'}),
             #html.H5("_______________________", className="card-subtitle"),
-            html.Div([html.H4("PPII:", className="helps1 column"),dbc.Button(
-            "?",
-            id='tPPII',
-            color="info",
-            className="helps2 column quest button",
-            n_clicks=0, size="sm"
-        ),],className='row flex-display',style={'marginBottom': 1, 'marginTop': 10}),                   
+            html.Div([html.H4("PPII:", className="helps1 column"),
+                      html.A(children=html.H5("?"), 
+                             id='tPPII',
+                             className="column helps2"
+                             )
+                      ],
+                     className='row flex-display',style={'marginBottom': 1, 'marginTop': 10}),                   
             #html.H5("PPII:", id='tPPII',className="card-subtitle",style= {"margin-top": "10px"}),
             dbc.Tooltip(
             "Selecciona los pozos de los Proyecto Piloto de Investigación Integral (PPII) que quieres desplegar. A su vez, puedes seleccionar los correspondientes volúmenes cilíndricos de monitoreo del semáforo sísmico para los pozos de investigación e inyector.",
@@ -1134,16 +1132,15 @@ card_main=html.Div(
                         ],
                         value=['KALEi'],
                         multi=True)],style={'font-size': '12px'}),
-            html.Div([html.H4("Datos complementarios:", className="helps1 column"),dbc.Button(
-            "?",
-            id='tCompl',
-            color="info",
-            className="helps2 column quest button",
-            n_clicks=0, size="sm"
-        ),],className='row flex-display',style={'marginBottom': 1, 'marginTop': 10}),  
+            html.Div([html.H4("Datos complementarios:", className="helps1 column"),
+                      html.A(children=html.H5("?"),    
+                             id='tCompl',
+                             className="column helps2"
+                             )
+                      ],className='row flex-display',style={'marginBottom': 1, 'marginTop': 10}),  
             #html.H5("Información complementaria:", id='tCompl',className="card-subtitle",style= {"margin-top": "10px"}),
             dbc.Tooltip(
-            "Selecciona capas de datos de otra información como complemento a la inicialmente desplegada en la gráfica 3D. Especialmente hidrogeológica y petrolera.",
+            "Selecciona otras capas de datos como complemento a los inicialmente desplegados en la gráfica 3D.",
             target="tCompl",
             ),
             html.Div(children=[dcc.Dropdown(id='PETRO',
