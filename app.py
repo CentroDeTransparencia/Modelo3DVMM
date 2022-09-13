@@ -1191,7 +1191,10 @@ card_main=html.Div(
             html.Br(),
             html.Button('¡Actualizar!', id='submit-val', n_clicks=0,style={'background-color': 'white',})
                     #  dbc.CardImg(src="assets\logos.png", bottom=True, alt='Logos_convenio_tripartito',)    
-                 ], style={'height':'62rem','overflow':'scroll','padding':'3rem',"margin-left": "10px","margin-right": "5px"},className="control column pretty_container"
+                 ], 
+            style={'height':'62rem','overflow':'scroll','padding':'3rem',"margin-left": "10px","margin-right": "5px"},
+            className="control column",
+            id='sidebar'
     # color="secondary",   # https://bootswatch.com/default/ for more card colors
     # inverse=True,
 
@@ -1335,7 +1338,7 @@ layout = dict(
 )
 
 app.layout = html.Div(
-    [  
+    [dcc.Store(id='toggle'),
      html.Div(
 
             [
@@ -1417,18 +1420,21 @@ app.layout = html.Div(
                             'is_loading':True}),
                 card_main,
                 html.Div(
-                    [ html.Br(),
-                        html.Div(card_graph), 
-
+                    [
+                        html.Br(),
+                     dbc.Button('T', color='primary', id='btn_sidebar'),
+                    html.Div(card_graph),
                          ],
-                                className="map column",
-                                style={"margin-right": "5rem"}
+                    className="map column",
+                                style={"margin-right": "5rem"},
+                                id = 'content'
                                 ),
             ],
             # justify="start",
 
             ),
-            ],className="row flex-display"
+            ], className="row flex-display",
+            id = 'div_slider'
         ),
         html.Hr(),           
         html.Div(
@@ -1991,6 +1997,32 @@ def update_figure(n_clicks,TOPO,EXG,START_DATE,END_DATE,MAGN,DEPTH,SEISMO,PPII,C
         loading=time.sleep(1)
         return fig,START_DATE,grealo,coloradoo,mugrosao,chorroso,eocmedo,pajao,salado,simitio,galemboo,ciraShaleo,bagreo,chontoraleso,coloradoho,enrejadoo,esmeraldaso,hielo,lluviao,mugrosaho,INYO,loading
 
+@app.callback(
+    [dash.dependencies.Output('sidebar', 'className'),
+     dash.dependencies.Output('content', 'className'),
+     dash.dependencies.Output('toggle', 'data'),
+     ], 
+    [dash.dependencies.Input('btn_sidebar', 'n_clicks'),
+     dash.dependencies.Input('toggle', 'data')]    
+     )
+
+def toggle_sidebar(n, n_clicks):
+    if n:
+        if n_clicks == 'show':
+            sidebar_classname = 'sidebar_hidden'
+            content_classname = 'content_sidebar_hidden'
+            c_clicks = 'hidden'
+            print('esta entrando')
+        if n_clicks == 'hidden':
+            sidebar_classname = 'control column'
+            content_classname = 'map column'
+            c_clicks = 'show'
+    else:
+        sidebar_classname = 'control column'
+        content_classname = 'map column'
+        c_clicks = 'show'
+    return sidebar_classname, content_classname, c_clicks
+    
 @app.callback(
      dash.dependencies.Output(component_id='Model_profile', component_property='figure'),
 

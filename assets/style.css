@@ -158,3 +158,15 @@ h3.card-title {
 /* .DayPicker_transitionContainer.DayPicker_transitionContainer_1.DayPicker_transitionContainer__horizontal.DayPicker_transitionContainer__horizontal_2 {
     font-size: 8px;
 } */
+
+.sidebar_hidden {
+  background-color: aqua;
+  position: fixed;
+  left: -20000px;
+  transition: all 0.5s;
+}
+
+.content_sidebar_hidden {
+  transition: margin-left 0.5s;
+  margin-left: 10px;
+}
