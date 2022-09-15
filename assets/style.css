@@ -137,6 +137,11 @@ h3.card-title {
     height: 20px;
     
   }
+
+.test-dev-branch{
+
+  stroke: beige;
+}
 /* .Select-menu-outer {
     font-size: 12px;
 }  */
