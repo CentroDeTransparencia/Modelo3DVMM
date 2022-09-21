@@ -157,6 +157,7 @@
 
   .control.column {
     width: 25%;
+    z-index: 1;
   }
   .helps2.column {
     width: 10%;

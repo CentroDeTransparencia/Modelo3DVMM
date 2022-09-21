@@ -638,7 +638,7 @@ app = dash.Dash(__name__,
         {"name": "viewport", "content": "width=device-width, initial-scale=1"},
     ],)
 app.config['suppress_callback_exceptions'] = True
-#Cargars los datos
+#Cargar los datos
 
 card_main=html.Div(
         
@@ -1425,7 +1425,7 @@ app.layout = html.Div(
                      dbc.Button('T', color='primary', id='btn_sidebar'),
                     html.Div(card_graph),
                          ],
-                    className="map column",
+                    className="model_graph column",
                                 style={"margin-right": "5rem"},
                                 id = 'content'
                                 ),
@@ -1949,7 +1949,7 @@ def update_figure(n_clicks,TOPO,EXG,START_DATE,END_DATE,MAGN,DEPTH,SEISMO,PPII,C
                 fig.add_traces(g1)
         if np.isin('g3', GEOL):
                 fig.add_traces(g3)
-        fig.update_layout(autosize=True,height=600,
+        fig.update_layout(autosize = True, height=600, 
                             margin=dict(l=0, r=0, b=0, t=0),plot_bgcolor='rgb(0,0,0)',
                             font_family="Poppins"
                         )
@@ -2011,15 +2011,14 @@ def toggle_sidebar(n, n_clicks):
         if n_clicks == 'show':
             sidebar_classname = 'sidebar_hidden'
             content_classname = 'content_sidebar_hidden'
-            c_clicks = 'hidden'
-            print('esta entrando')
+            c_clicks = 'hidden'            
         if n_clicks == 'hidden':
             sidebar_classname = 'control column'
-            content_classname = 'map column'
+            content_classname = 'model_graph'
             c_clicks = 'show'
     else:
         sidebar_classname = 'control column'
-        content_classname = 'map column'
+        content_classname = 'model_graph'
         c_clicks = 'show'
     return sidebar_classname, content_classname, c_clicks
     

@@ -170,9 +170,18 @@ h3.card-title {
   position: fixed;
   left: -20000px;
   transition: all 0.5s;
+  z-index: 1;
 }
 
 .content_sidebar_hidden {
   transition: margin-left 0.5s;
   margin-left: 10px;
+  z-index: -1;
+}
+
+.model_graph  {
+  width: 100%;
+  margin-left: 30%;
+  z-index: -1;
+
 }
