@@ -169,7 +169,7 @@ h3.card-title {
 
   position: absolute;
   left: 0;
-  width: 30rem;
+  width: 35rem;
   height: 100%;
   z-index: 1;
   
@@ -200,12 +200,12 @@ h3.card-title {
 }
 
 .model_graph  {
-  width: 100%;
-  margin-left: 31rem;
+  width: 100% -10rem;
+  margin-left: 36rem;
   margin-right: 32rem;
   z-index: 1;
   transition: margin-left .5s;
-
+  right:0;
 }
 
 #btn_sidebar {
@@ -214,4 +214,8 @@ h3.card-title {
 
 .dash-graph {
   margin-right: 5rem;
+}
+
+a {
+  color:#4cb286;
 }
