@@ -632,7 +632,7 @@ del n,ls,fs
 
 server = Flask(__name__)
 app = dash.Dash(__name__, 
-                external_stylesheets=[dbc.themes.SUPERHERO],
+                external_stylesheets=[dbc.themes.SUPERHERO, dbc.icons.BOOTSTRAP],
                 server=server,
                 meta_tags=[
         {"name": "viewport", "content": "width=device-width, initial-scale=1"},
@@ -1192,8 +1192,8 @@ card_main=html.Div(
             html.Button('¡Actualizar!', id='submit-val', n_clicks=0,style={'background-color': 'white',})
                     #  dbc.CardImg(src="assets\logos.png", bottom=True, alt='Logos_convenio_tripartito',)    
                  ], 
-            style={'height':'62rem','overflow':'scroll','padding':'3rem',"margin-left": "10px","margin-right": "5px"},
-            className="control column",
+            
+            className="sidebar",
             id='sidebar'
     # color="secondary",   # https://bootswatch.com/default/ for more card colors
     # inverse=True,
@@ -1404,6 +1404,7 @@ app.layout = html.Div(
             ], className="row flex-display", style={"padding": "25px"},id='header'
 
             ),
+            
         html.Div(
             [
                 html.Div(
@@ -1419,14 +1420,16 @@ app.layout = html.Div(
                             'prop_name':'Cargando...',
                             'is_loading':True}),
                 card_main,
+
+                
+
                 html.Div(
                     [
                         html.Br(),
-                     dbc.Button('T', color='primary', id='btn_sidebar'),
+                     dbc.Button(html.I(), color='primary', id='btn_sidebar', size="lg"),
                     html.Div(card_graph),
                          ],
                     className="model_graph column",
-                                style={"margin-right": "5rem"},
                                 id = 'content'
                                 ),
             ],
@@ -2001,6 +2004,7 @@ def update_figure(n_clicks,TOPO,EXG,START_DATE,END_DATE,MAGN,DEPTH,SEISMO,PPII,C
     [dash.dependencies.Output('sidebar', 'className'),
      dash.dependencies.Output('content', 'className'),
      dash.dependencies.Output('toggle', 'data'),
+     dash.dependencies.Output('btn_sidebar','className')
      ], 
     [dash.dependencies.Input('btn_sidebar', 'n_clicks'),
      dash.dependencies.Input('toggle', 'data')]    
@@ -2011,16 +2015,19 @@ def toggle_sidebar(n, n_clicks):
         if n_clicks == 'show':
             sidebar_classname = 'sidebar_hidden'
             content_classname = 'content_sidebar_hidden'
-            c_clicks = 'hidden'            
+            c_clicks = 'hidden'
+            btn_sidebar_className = 'bi bi-arrow-bar-right'            
         if n_clicks == 'hidden':
-            sidebar_classname = 'control column'
+            sidebar_classname = 'sidebar'
             content_classname = 'model_graph'
             c_clicks = 'show'
+            btn_sidebar_className = 'bi bi-arrow-bar-left' 
     else:
-        sidebar_classname = 'control column'
+        sidebar_classname = 'sidebar'
         content_classname = 'model_graph'
         c_clicks = 'show'
-    return sidebar_classname, content_classname, c_clicks
+        btn_sidebar_className = 'bi bi-arrow-bar-left' 
+    return sidebar_classname, content_classname, c_clicks, btn_sidebar_className
     
 @app.callback(
      dash.dependencies.Output(component_id='Model_profile', component_property='figure'),
