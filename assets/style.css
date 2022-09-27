@@ -243,8 +243,22 @@ h3.card-title {
     
 }
 
-.helpButtons{
-  margin-left: 90px;
+.btn-title-row {
+
+  display: flex;
+  flex-direction: column;
+
 }
+
+.helpButtons{
+  margin-left: 25px;
+}
+
+}
+
+.btn-title-row {
+
+  display: flex;
+  flex-direction: row;
 
 }

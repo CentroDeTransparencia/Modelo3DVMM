@@ -1440,7 +1440,7 @@ app.layout = html.Div(
         html.Div(
                 [       html.Div([html.H5('Perfil:',className='profile column'),
                                     dbc.Button('¿Cómo funciona?',outline=True,color='info',
-                                    id='perf_but',className='me-2 help',n_clicks=0)],className='row flex-display'),
+                                    id='perf_but',className='me-2 help',n_clicks=0)],className='btn-title-row'),
                             dbc.Tooltip(
                             "El perfil sísmico permite visualizar los sismos, la topografía, las superficies geológicas, lo pozos PPII y los volúmenes de monitoreo contenidos en un perfil de 0.1°. Estos pueden ser desactivados en la interfaz derecha, así como la especificar la información pasando el cursor encima.",
                             target='perf_but',
@@ -1449,7 +1449,7 @@ app.layout = html.Div(
                         html.Hr(),
                                html.Div([html.H5('Inyección de agua para recobro mejorado en campos de hidrocarburos (ANH):',className='profile column'),
                                     dbc.Button('¿Cómo funciona?',outline=True,color='info',
-                                    id='iny_but',className='me-2 help column',n_clicks=0)],className='row flex-display'),
+                                    id='iny_but',className='me-2 help',n_clicks=0)],className='btn-title-row'),
                             dbc.Tooltip(
                             "La grafica de la izquierda indica la evolución temporal de la inyeccion de agua en un campo petrolífero en específico, el cual puede ser modificado en la sección de informacion complementaria. La de la derecha, indica como es esta inyeccion por campo cada año. ",
                             target='iny_but',
