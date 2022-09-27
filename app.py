@@ -1270,7 +1270,6 @@ card_explication_sem=dbc.Card(
                                 "max-width": "1000px",
                                 "margin-top": "5px",
                                 "display":"block",
-                                "margin-right": "auto",
                                 "margin-left": "auto",
                                 "margin-bottom": "5px",
 
@@ -1288,7 +1287,6 @@ card_explication_sem=dbc.Card(
                                 "max-width": "1000px",
                                 "margin-top": "5px",
                                 "display":"block",
-                                "margin-right": "auto",
                                 "margin-left": "auto",
                                 "margin-bottom": "5px",
                             },
@@ -1309,7 +1307,6 @@ card_explication_sem=dbc.Card(
                                 "max-width": "1000px",
                                 "margin-top": "5px",
                                 "display":"block",
-                                "margin-right": "auto",
                                 "margin-left": "auto",
                                 "margin-bottom": "5px",
 
@@ -1487,8 +1484,7 @@ app.layout = html.Div(
                     # vertical=True
                     )],className='buttons column', 
         style={
-                                "margin-left": "0px",
-                                "margin-right": "auto",
+                                "margin-left": "0px",                                
                                 "margin-top": "35px",   
                                 "margin-bottom": "25px",
 

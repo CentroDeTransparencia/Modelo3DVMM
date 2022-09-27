@@ -186,8 +186,8 @@ h3.card-title {
 
 .sidebar_hidden {
   position: fixed;
-  width: 30rem;
-  left: -30rem;
+  width: 35rem;
+  left: -36rem;
   transition: all 0.5s;
   z-index: 1;
 }
@@ -202,14 +202,14 @@ h3.card-title {
 .model_graph  {
   width: 100% -10rem;
   margin-left: 36rem;
-  margin-right: 32rem;
   z-index: 1;
   transition: margin-left .5s;
-  right:0;
+  overflow: auto;
 }
 
 #btn_sidebar {
   margin-bottom: 0.5rem;
+  font-size: 20px;
 }
 
 .dash-graph {
