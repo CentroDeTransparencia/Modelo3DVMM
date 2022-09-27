@@ -1443,7 +1443,7 @@ app.layout = html.Div(
         html.Div(
                 [       html.Div([html.H5('Perfil:',className='profile column'),
                                     dbc.Button('¿Cómo funciona?',outline=True,color='info',
-                                    id='perf_but',className='me-2 help column',n_clicks=0)],className='row flex-display'),
+                                    id='perf_but',className='me-2 help',n_clicks=0)],className='row flex-display'),
                             dbc.Tooltip(
                             "El perfil sísmico permite visualizar los sismos, la topografía, las superficies geológicas, lo pozos PPII y los volúmenes de monitoreo contenidos en un perfil de 0.1°. Estos pueden ser desactivados en la interfaz derecha, así como la especificar la información pasando el cursor encima.",
                             target='perf_but',
@@ -1466,33 +1466,14 @@ app.layout = html.Div(
 
                             src=app.get_asset_url("Institucional_3Logos_letrasblancas.png"),
 
-                            id="logos-image",
-
-                            style={
-
-                                "height": "auto",
-
-                                "max-width": "600px",
-                                "margin-top": "25px",
-
-                                "margin-bottom": "25px",
-
-                            },
-
-                        ),className='images column'),
+                            id="logos-image"),className='images column'),
                  html.Div([dbc.ButtonGroup([     
-        dbc.Button("¿Cómo funciona?", color="#4cb286",id="function_but_xl", size="lg",className="me-1", n_clicks=0),
-        dbc.Button("¿Semáforo sísmico?",color="#21a7e3", id="semaforo_but_xl",size="lg", className="me-1", n_clicks=0),
-        dbc.Button("Referencias",color="#21a7e3", id="references_but_xl",size="lg", className="me-1", n_clicks=0)],
+        dbc.Button("¿Cómo funciona?", color="#4cb286",id="function_but_xl", size="sm",className="me-1 column", n_clicks=0),
+        dbc.Button("¿Semáforo sísmico?",color="#21a7e3", id="semaforo_but_xl",size="sm", className="me-1 column", n_clicks=0),
+        dbc.Button("Referencias",color="#21a7e3", id="references_but_xl",size="sm", className="me-1 column", n_clicks=0)],
                     # vertical=True
-                    )],className='buttons column', 
-        style={
-                                "margin-left": "0px",
-                                "margin-right": "auto",
-                                "margin-top": "35px",   
-                                "margin-bottom": "25px",
-
-                            }),],className="row flex-display",id='footer'),
+                    )],className='helpButtons', 
+        ),],id='footer'),
         dbc.Modal(
             [
                 dbc.ModalHeader(dbc.ModalTitle(" ")),

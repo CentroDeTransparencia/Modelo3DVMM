@@ -67,6 +67,9 @@
 
 #footer{
     background-color: #002c35;
+    display: flex;
+    flex-direction :row;
+    
 
 }
 
@@ -184,10 +187,13 @@ h3.card-title {
 
 }
 
+.helpButtons{
+  padding: 2rem;
+}
 .sidebar_hidden {
   position: fixed;
   width: 35rem;
-  left: -36rem;
+  left: -37rem;
   transition: all 0.5s;
   z-index: 1;
 }
@@ -196,22 +202,49 @@ h3.card-title {
 .content_sidebar_hidden {
   
   transition: margin-left 0.5s;
-  margin-left: 1rem;
+  
 }
 
 .model_graph  {
   width: 100% -10rem;
-  margin-left: 36rem;
+  margin-left: 35rem;
   z-index: 1;
   transition: margin-left .5s;
   overflow: auto;
 }
 
 #btn_sidebar {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   font-size: 20px;
+  margin-left: 1rem;
 }
 
 .dash-graph {
   margin-right: 5rem;
+}
+
+#logos-image {
+
+  height: auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+.dash-graph {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+@media (max-width: 550px){
+
+  #footer{
+    background-color: #002c35;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.helpButtons{
+  margin-left: 90px;
+}
+
 }
