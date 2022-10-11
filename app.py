@@ -1377,8 +1377,9 @@ app.layout = html.Div(
                                 html.H3(
 
                                     "Modelo Tridimensional del Valle Medio del Magdalena - PPII",
+                                    className="model-title"
 
-                                    style={"margin-bottom": "0px", 'textAlign': 'center','font-weight':'bold'},
+                                    # style={"margin-bottom": "0px", 'textAlign': 'center','font-weight':'bold'},
 
                                 ),
 
@@ -1398,7 +1399,7 @@ app.layout = html.Div(
 
 
 
-            ], className="row flex-display", style={"padding": "25px"},id='header'
+            ], className="header", id='header'
 
             ),
             

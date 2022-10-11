@@ -266,3 +266,22 @@ h3.card-title {
 a{
   color :#4cb286;
 }
+
+.model-title{
+  margin-bottom: 0px; 
+  text-align: center;
+  font-weight: bold;
+}
+
+.header {
+  display: flex;
+  padding: 25px;
+}
+
+@media (max-width: 800px) {
+  .model-title{
+    font-size: 1.5rem;
+
+  }
+}
+
