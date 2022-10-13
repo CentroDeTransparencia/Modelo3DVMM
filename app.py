@@ -1338,66 +1338,20 @@ app.layout = html.Div(
     [dcc.Store(id='toggle'),
      html.Div(
 
-            [
+            [      
+                html.Img(
+                    src=app.get_asset_url("positivo_recortado.png"),
+                    id="plotly-image",
+                    className="logo-CdT"
+                ),                   
 
-                html.Div(
+                html.H3(
 
-                    html.Div(                    [
+                    "Modelo Tridimensional del Valle Medio del Magdalena - PPII",
+                    className="model-title"
 
-                        html.Img(
-
-                            src=app.get_asset_url("positivo_recortado.png"),
-
-                            id="plotly-image",
-
-                            style={
-
-                                "height": "70px",
-
-                                "width": "auto",
-
-                                "margin-bottom": "25px",
-
-                            },
-
-                        )
-
-                    ],
-
-                    ), className="control column",id="CdT-Logo",
-
-                    ),
-
-                html.Div([
-
-                        html.Div(
-
-                            [
-
-                                html.H3(
-
-                                    "Modelo Tridimensional del Valle Medio del Magdalena - PPII",
-                                    className="model-title"
-
-                                    # style={"margin-bottom": "0px", 'textAlign': 'center','font-weight':'bold'},
-
-                                ),
-
-                                 html.H5(
-
-                                    "", style={"margin-top": "0px", 'textAlign': 'center'}
-
-                                 ),
-
-                            ]
-
-                        )
-
-                    ], id="title", className="map column"),
-
-                   
-
-
+                    # style={"margin-bottom": "0px", 'textAlign': 'center','font-weight':'bold'},
+                ), 
 
             ], className="header", id='header'
 
@@ -1460,18 +1414,18 @@ app.layout = html.Div(
             #  justify="start"
             )     ,
         html.Div([
-                html.Div(html.Img(
-
-                            src=app.get_asset_url("Institucional_3Logos_letrasblancas.png"),
-
-                            id="logos-image"),className='images column'),
-                 html.Div([dbc.ButtonGroup([     
-        dbc.Button("¿Cómo funciona?", color="#4cb286",id="function_but_xl", size="sm",className="me-1 column", n_clicks=0),
-        dbc.Button("¿Semáforo sísmico?",color="#21a7e3", id="semaforo_but_xl",size="sm", className="me-1 column", n_clicks=0),
-        dbc.Button("Referencias",color="#21a7e3", id="references_but_xl",size="sm", className="me-1 column", n_clicks=0)],
-                    # vertical=True
-                    )],className='helpButtons', 
-        ),],id='footer'),
+                 html.Div(
+                     [     
+        dbc.Button("¿Cómo funciona?", color="#4cb286",id="function_but_xl", size="sm",className="me-1", n_clicks=0),
+        dbc.Button("¿Semáforo sísmico?",color="#4cb286", id="semaforo_but_xl",size="sm", className="me-1", n_clicks=0),
+        dbc.Button("Referencias",color="#4cb286", id="references_but_xl",size="sm", className="me-1", n_clicks=0)
+        ], className='helpButtons'
+        ),
+                 html.Hr(),
+                 html.Img(
+                    src=app.get_asset_url("Institucional_3Logos_letrasblancas.png"),
+                    id="logos-image"),
+            ],id='footer'),
         dbc.Modal(
             [
                 dbc.ModalHeader(dbc.ModalTitle(" ")),

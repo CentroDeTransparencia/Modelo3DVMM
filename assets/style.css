@@ -68,9 +68,10 @@
 #footer{
     background-color: #002c35;
     display: flex;
-    flex-direction :row;
-    
-
+    flex-direction :column;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 div.modal-header {
@@ -187,9 +188,6 @@ h3.card-title {
 
 }
 
-.helpButtons{
-  padding: 2rem;
-}
 .sidebar_hidden {
   position: fixed;
   width: 35rem;
@@ -226,8 +224,8 @@ h3.card-title {
 #logos-image {
 
   height: auto;
-  width: 100%;
-  max-width: 100%;
+  width: 50%;
+  margin: 0 auto;
 }
 
 .dash-graph {
@@ -250,11 +248,16 @@ h3.card-title {
 
 }
 
-.helpButtons{
-  margin-left: 25px;
 }
 
+.helpButtons{
+  margin: 0 auto;
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
 }
+
 
 .btn-title-row {
 
@@ -268,20 +271,40 @@ a{
 }
 
 .model-title{
-  margin-bottom: 0px; 
+
   text-align: center;
   font-weight: bold;
+  margin-right: 30px;
 }
 
 .header {
   display: flex;
-  padding: 25px;
+  padding: 15px;
+  align-items: center;
+}
+
+.logo-CdT {
+  height: 90px;
+  width: auto;
+
+  margin-right: auto;
 }
 
 @media (max-width: 800px) {
-  .model-title{
-    font-size: 1.5rem;
-
+  .header {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .logo-CdT {
+    margin: 0 auto;
+  }
+  .model-title {
+    margin-right: 0;
+  }
+  #logos-image {
+    height: auto;
+    width: 80%;
+    margin: 0 auto;
   }
 }
 
