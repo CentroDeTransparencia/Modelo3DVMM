@@ -13,6 +13,9 @@ from flask import Flask
 import os
 from geoseismo import *
 import warnings
+from graficas.iny_bar_total import fig as iny_bar
+
+
 
 warnings.filterwarnings('ignore')
 pd.options.mode.chained_assignment = None 
@@ -1409,10 +1412,10 @@ app.layout = html.Div(
                             "La grafica de la izquierda indica la evolución temporal de la inyeccion de agua en un campo petrolífero en específico, el cual puede ser modificado en la sección de informacion complementaria. La de la derecha, indica como es esta inyeccion por campo cada año. ",
                             target='iny_but',
                             ),
-                        html.Div(card_iny_graph)
+                        html.Div([card_iny_graph, dcc.Graph(figure = iny_bar)], id = "graficas_iny")
                     ], 
             #  justify="start"
-            )     ,
+            ),
         html.Div([
                  html.Div(
                      [     
@@ -2156,7 +2159,7 @@ def update_profile(n_clicks,START_DATE,END_DATE,MAGN,DEPTH,SEISMO,x0,x1,y0,y1):
     fig2.update_layout(xaxis_title="Distancia (°)",
                         yaxis_title="Profundidad (m)",
                         font_family="Poppins",
-                        margin=dict(t=50,l=50,b=50,r=50))
+                        margin=dict(t=50,l=50,b=50,r=50), showlegend = False)
     return fig2
 
 @app.callback(
@@ -2168,9 +2171,9 @@ def iny(n_clsick,TINY):
     datos_iny = pd.read_csv("datasets/inyeccion_geo.csv", delimiter = ';')
     name_campo=TINY
     fig = make_subplots(
-        rows=1, cols=2,
-        specs=[[{"type": "scatter"}, {"type": "bar"}]],
-        subplot_titles=('Volúmenes de agua (bbl) - '+name_campo, "Total por año" ))
+        rows=1, cols=1,
+        specs=[[{"type": "scatter"}]],
+        subplot_titles=('Volúmenes de agua (bbl) - '+name_campo))
     months=[]
     for i in datos_iny.columns:
         if '-' in i:
@@ -2185,16 +2188,6 @@ def iny(n_clsick,TINY):
     )
     años=np.arange(2017,2022)
     old=np.array([0,0,0,0,0])
-    for i in datos_iny['CAMPO']:
-        if i!='TOTAL':
-            campiny=datos_iny[datos_iny['CAMPO']==i]
-            new=[float(np.array(campiny[age])[0]) for age in años.astype(str)]
-            fig.add_trace(
-                go.Bar(name=i, x=años, y=new+old,hovertemplate=['bbl:'+str(x) for x in new],showlegend=False),row=1, col=2)
-            old=new
-        else:
-            pass
-    del i
     fig.update_layout(margin=dict(t=50,l=50,b=50,r=50),hoverlabel=dict(
                         # bgcolor="white",
                         font_size=12,
@@ -2202,10 +2195,54 @@ def iny(n_clsick,TINY):
                     ),barmode='stack',
                     # title_text="Inyección de agua para recobro mejorado en campos de hidrocarburos (ANH)", 
                     font_family="Poppins")
-    fig.update_yaxes(tickvals=np.arange(0,300000000+1,50000000),row=2, col=2)
-    fig.update_xaxes(tickvals=años,row=2, col=2)
+    fig.update_yaxes(tickvals=np.arange(0,300000000+1,50000000))
+    fig.update_xaxes(tickvals=años)
     fig.update_xaxes(tickangle=45)
     return fig
+
+
+# def iny(n_clsick,TINY):
+#     datos_iny = pd.read_csv("datasets/inyeccion_geo.csv", delimiter = ';')
+#     name_campo=TINY
+#     fig = make_subplots(
+#         rows=1, cols=2,
+#         specs=[[{"type": "scatter"}, {"type": "bar"}]],
+#         subplot_titles=('Volúmenes de agua (bbl) - '+name_campo, "Total por año" ))
+#     months=[]
+#     for i in datos_iny.columns:
+#         if '-' in i:
+#             months.append(i)
+#     del i
+#     # name_campo='LA CIRA'
+#     iny_df=datos_iny[datos_iny['CAMPO']==name_campo]
+
+#     fig.add_trace(
+#         go.Scatter(x=months,y=[float(np.array(iny_df[x])[0]) for x in months],name=name_campo,showlegend=False),
+#         row=1, col=1
+#     )
+#     años=np.arange(2017,2022)
+#     old=np.array([0,0,0,0,0])
+#     for i in datos_iny['CAMPO']:
+#         if i!='TOTAL':
+#             campiny=datos_iny[datos_iny['CAMPO']==i]
+#             new=[float(np.array(campiny[age])[0]) for age in años.astype(str)]
+#             fig.add_trace(
+#                 go.Bar(name=i, x=años, y=new+old,hovertemplate=['bbl:'+str(x) for x in new],showlegend=False),row=1, col=2)
+#             old=new
+#         else:
+#             pass
+#     del i
+#     fig.update_layout(margin=dict(t=50,l=50,b=50,r=50),hoverlabel=dict(
+#                         # bgcolor="white",
+#                         font_size=12,
+#                         font_family="Poppins"
+#                     ),barmode='stack',
+#                     # title_text="Inyección de agua para recobro mejorado en campos de hidrocarburos (ANH)", 
+#                     font_family="Poppins")
+#     fig.update_yaxes(tickvals=np.arange(0,300000000+1,50000000),row=2, col=2)
+#     fig.update_xaxes(tickvals=años,row=2, col=2)
+#     fig.update_xaxes(tickangle=45)
+#     return fig
 
 if __name__ == "__main__":
     app.run_server(debug=True)
