@@ -2199,7 +2199,8 @@ def iny(n_clsick,TINY):
                         # bgcolor="white",
                         font_size=12,
                         font_family="Poppins"),
-                    title_text='Volúmenes de agua (bbl) - '+name_campo, 
+                    title_text='Volúmenes de agua (bbl) - '+name_campo,
+                    title_x = 0.5,
                     font_family="Poppins")
     # fig.update_yaxes(tickvals=np.arange(0,300000000+1,50000000))
     # fig.update_xaxes(tickvals=años)
