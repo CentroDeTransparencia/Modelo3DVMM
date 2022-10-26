@@ -1341,7 +1341,7 @@ app.layout = html.Div(
     [dcc.Store(id='toggle'),
      html.Div(
 
-            [      
+            [    
                 html.Img(
                     src=app.get_asset_url("positivo_recortado.png"),
                     id="plotly-image",
@@ -1359,6 +1359,10 @@ app.layout = html.Div(
             ], className="header", id='header'
 
             ),
+     html.Div(   
+     dbc.Button('Abrir panel de control', color='info', id='btn_sidebar', size="lg"), 
+     className = 'button_sidebar'
+     ),
             
         html.Div(
             [
@@ -1381,7 +1385,7 @@ app.layout = html.Div(
                 html.Div(
                     [
                         html.Br(),
-                     dbc.Button(html.I(), color='primary', id='btn_sidebar', size="lg"),
+                    #  dbc.Button(html.I(), color='primary', id='btn_sidebar', size="lg"),
                     html.Div(card_graph),
                          ],
                     className="model_graph column",
@@ -1419,6 +1423,9 @@ app.layout = html.Div(
         html.Div([
                  html.Div(
                      [     
+        # dbc.Button("¿Cómo funciona?", color="#4cb286",id="function_but_xl", size="sm",className="me-1", n_clicks=0),
+        # dbc.Button("¿Semáforo sísmico?",color="#4cb286", id="semaforo_but_xl",size="sm", className="me-1", n_clicks=0),
+        # dbc.Button("Referencias",color="#4cb286", id="references_but_xl",size="sm", className="me-1", n_clicks=0)
         dbc.Button("¿Cómo funciona?", color="#4cb286",id="function_but_xl", size="sm",className="me-1", n_clicks=0),
         dbc.Button("¿Semáforo sísmico?",color="#4cb286", id="semaforo_but_xl",size="sm", className="me-1", n_clicks=0),
         dbc.Button("Referencias",color="#4cb286", id="references_but_xl",size="sm", className="me-1", n_clicks=0)
@@ -1940,7 +1947,8 @@ def update_figure(n_clicks,TOPO,EXG,START_DATE,END_DATE,MAGN,DEPTH,SEISMO,PPII,C
     [dash.dependencies.Output('sidebar', 'className'),
      dash.dependencies.Output('content', 'className'),
      dash.dependencies.Output('toggle', 'data'),
-     dash.dependencies.Output('btn_sidebar','className')
+     dash.dependencies.Output('btn_sidebar','className'),
+     dash.dependencies.Output('btn_sidebar', 'children')
      ], 
     [dash.dependencies.Input('btn_sidebar', 'n_clicks'),
      dash.dependencies.Input('toggle', 'data')]    
@@ -1952,18 +1960,21 @@ def toggle_sidebar(n, n_clicks):
             sidebar_classname = 'sidebar_hidden'
             content_classname = 'content_sidebar_hidden'
             c_clicks = 'hidden'
-            btn_sidebar_className = 'bi bi-arrow-bar-right'            
+            btn_sidebar_className = 'bi bi-arrow-bar-right'
+            text_btn = ' Abrir panel de control'           
         if n_clicks == 'hidden':
             sidebar_classname = 'sidebar'
             content_classname = 'model_graph'
             c_clicks = 'show'
-            btn_sidebar_className = 'bi bi-arrow-bar-left' 
+            btn_sidebar_className = 'bi bi-arrow-bar-left'
+            text_btn = ' Cerrar panel de control' 
     else:
-        sidebar_classname = 'sidebar'
-        content_classname = 'model_graph'
-        c_clicks = 'show'
-        btn_sidebar_className = 'bi bi-arrow-bar-left' 
-    return sidebar_classname, content_classname, c_clicks, btn_sidebar_className
+        sidebar_classname = 'sidebar_hidden'
+        content_classname = 'content_sidebar_hidden'
+        c_clicks = 'hidden'
+        btn_sidebar_className = 'bi bi-arrow-bar-right' 
+        text_btn = ' Abrir panel de control'
+    return sidebar_classname, content_classname, c_clicks, btn_sidebar_className, text_btn
     
 @app.callback(
      dash.dependencies.Output(component_id='Model_profile', component_property='figure'),

@@ -212,10 +212,15 @@ h3.card-title {
 }
 
 #btn_sidebar {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-size: 20px;
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
+  width: 100%;
 }
+
+/* .button_sidebar {
+  display: flex;
+} */
 
 .dash-graph {
   margin-right: 5rem;
@@ -233,7 +238,13 @@ h3.card-title {
   margin-left: 1rem;
 }
 @media (max-width: 550px){
-
+  .btn-info {
+    background-color: #4cb286;
+  }
+  .btn-outline-info {
+    background-color: #4cb286;
+    color: white;
+}
   #footer{
     background-color: #002c35;
     display: flex;

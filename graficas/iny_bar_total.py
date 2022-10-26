@@ -18,6 +18,7 @@ for i in datos_iny['CAMPO']:
         old=new
     else:
         pass
+    
 fig.update_layout(margin=dict(t=50,l=50,b=50,r=50),hoverlabel=dict(
                         # bgcolor="white",
                         font_size=12,
