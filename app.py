@@ -668,7 +668,7 @@ card_explication_sem=dbc.Card(
         html.Div(
         html.Img(
 
-                            src=app.get_asset_url("Tabla7a.png"),
+                            src="https://saaeuyncprdblob.blob.core.windows.net/drupal-blob/UNAL/Imagenes/Dash/Modelo3D/assets/Tabla7a.png",
 
                             id="Tabla7a-image",
 
@@ -686,7 +686,7 @@ card_explication_sem=dbc.Card(
                         )),
         html.Div(html.Img(
 
-                            src=app.get_asset_url("Tabla7b.png"),
+                            src="https://saaeuyncprdblob.blob.core.windows.net/drupal-blob/UNAL/Imagenes/Dash/Modelo3D/assets/Tabla7b.PNG",
 
                             id="Tabla7b-image",
 
@@ -706,7 +706,7 @@ card_explication_sem=dbc.Card(
             className="card-text"),
         html.Img(
 
-                            src=app.get_asset_url("Tabla8.png"),
+                            src="https://saaeuyncprdblob.blob.core.windows.net/drupal-blob/UNAL/Imagenes/Dash/Modelo3D/assets/Tabla8.png",
 
                             id="Tabla8-image",
 
@@ -748,7 +748,7 @@ app.layout = html.Div(
 
             [    
                 html.Img(
-                    src=app.get_asset_url("positivo_recortado.png"),
+                    src="https://saaeuyncprdblob.blob.core.windows.net/drupal-blob/UNAL/Imagenes/Dash/Modelo3D/assets/positivo_recortado.png",
                     id="plotly-image",
                     className="logo-CdT"
                 ),                   
@@ -838,7 +838,7 @@ app.layout = html.Div(
         ),
                  html.Hr(),
                  html.Img(
-                    src=app.get_asset_url("Institucional_3Logos_letrasblancas.png"),
+                    src="https://saaeuyncprdblob.blob.core.windows.net/drupal-blob/UNAL/Imagenes/Dash/Modelo3D/assets/2_Institucional_3Logos_letrasblancas.png",
                     id="logos-image"),
             ],id='footer'),
         dbc.Modal(
