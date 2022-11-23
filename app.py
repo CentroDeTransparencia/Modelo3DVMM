@@ -1336,12 +1336,20 @@ def update_figure(n_clicks,TOPO,EXG,START_DATE,END_DATE,MAGN,DEPTH,SEISMO,PPII,C
                 yaxis = dict(title='Latitud(°)',nticks=10, range=[lai,las],),
                 zaxis = dict(title='Profundidad (m)',nticks=10, range=[-32000,10000],),),
         font_family="Poppins")
+        # fig.update_layout(legend=dict(
+        #             yanchor="top",
+        #             y=0.99,
+        #             xanchor="left",
+        #             x=0.01,
+        #         ), showlegend=True, font_family="Poppins",)
         fig.update_layout(legend=dict(
-                    yanchor="top",
-                    y=0.99,
-                    xanchor="left",
-                    x=0.01,
-                ), font_family="Poppins",)
+        orientation="h",
+        #yanchor="bottom",
+        y=-0.05,
+        #xanchor="right",
+        x=0, 
+        # title = "Sistema de coordenadas: WGS 84"
+        ))
     
         
 
@@ -1364,7 +1372,6 @@ def update_figure(n_clicks,TOPO,EXG,START_DATE,END_DATE,MAGN,DEPTH,SEISMO,PPII,C
                     ),
                     title_font_size=12,
                         title={
-                        'text': "*Sistema de coordenadas: WGS 84",
                         'y':0.9,
                         'x':0.9,
                         'xanchor': 'right',
@@ -1605,7 +1612,7 @@ def update_profile(n_clicks,START_DATE,END_DATE,MAGN,DEPTH,SEISMO,x0,x1,y0,y1):
     fig2.update_layout(legend=dict(
         orientation="h",
         #yanchor="bottom",
-        y=-0.2,
+        y=-0.25,
         #xanchor="right",
         x=0
     ))
