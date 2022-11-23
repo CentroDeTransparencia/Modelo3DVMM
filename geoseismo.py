@@ -187,9 +187,9 @@ def topo_profile(x0,x1,y0,y1,df_topo):
     z=[]
     d=[]
     for xln,yln in zip(x_lin,y_lin):
-        df_topo_1=df_topo[(df_topo[0]<xln+0.01)&(df_topo[0]>xln-0.01)&(df_topo[1]>yln-0.01)&(df_topo[1]<yln+0.01)]
+        df_topo_1=df_topo[(df_topo['0']<xln+0.01)&(df_topo['0']>xln-0.01)&(df_topo['1']>yln-0.01)&(df_topo['1']<yln+0.01)]
         dist_2=10
-        for xt,yt,zt in zip(df_topo_1[0],df_topo_1[1],df_topo_1[2]):
+        for xt,yt,zt in zip(df_topo_1['0'],df_topo_1['1'],df_topo_1['2']):
             d_prov=np.sqrt((xt-xln)**2+(yt-yln)**2)
             # print(d_prov)
             if d_prov<dist_2:
