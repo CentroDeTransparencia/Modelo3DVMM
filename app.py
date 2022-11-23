@@ -14,7 +14,7 @@ import os
 from geoseismo import *
 import warnings
 from graficas.iny_bar_total import fig as iny_bar
-from graficas.iny_bar_total import iny
+# from graficas.iny_bar_total import iny
 
 
 warnings.filterwarnings('ignore')
@@ -487,6 +487,7 @@ for i in fallas['LINE_ID'].unique():
                     mode='lines',
                     name=tip,line=dict(color='red',width=4),showlegend=False),)
 del fallas,fallas_1,i
+
 #Campos
 campet=pd.read_csv('datasets\campos_SIM.csv',decimal=',')
 campet['X']=campet['X'].astype(float)
@@ -510,6 +511,7 @@ for i in campet['LINE_ID'].unique():
                     name=tip,line=dict(color='black',width=3),showlegend=False),)
 
 del campet,campet_1,i
+
 #Superficies geológicas
 
 Eoceno=surface_3d('datasets/DISCORDANCIA_EOCENO.txt','#FDA75F','#9d4702','Discordancia del Eoceno Medio',1)
@@ -2187,39 +2189,39 @@ def update_profile(n_clicks,START_DATE,END_DATE,MAGN,DEPTH,SEISMO,x0,x1,y0,y1):
     [dash.dependencies.Input('submit-val', 'n_clicks'),
     dash.dependencies.State(component_id='TINY', component_property='value')])
 
-def iny2(n_clsick,TINY):    
-    return iny(TINY)
+# def iny2(n_clsick,TINY):    
+#     return iny(TINY)
 
-# def iny(n_clsick,TINY):
-#     datos_iny = pd.read_csv("datasets/inyeccion_geo.csv", delimiter = ';')
-#     #'Volúmenes de agua (bbl) - '+name_campo
-#     name_campo=TINY
-#     fig = go.Figure()
-#     months=[]
-#     for i in datos_iny.columns:
-#         if '-' in i:
-#             months.append(i)
-#     del i
-#     # name_campo='LA CIRA'
-#     iny_df=datos_iny[datos_iny['CAMPO']==name_campo]
+def iny(n_clsick,TINY):
+    datos_iny = pd.read_csv("datasets/inyeccion_geo.csv", delimiter = ';')
+    #'Volúmenes de agua (bbl) - '+name_campo
+    name_campo=TINY
+    fig = go.Figure()
+    months=[]
+    for i in datos_iny.columns:
+        if '-' in i:
+            months.append(i)
+    del i
+    # name_campo='LA CIRA'
+    iny_df=datos_iny[datos_iny['CAMPO']==name_campo]
 
-#     fig.add_trace(
-#         go.Scatter(x=months,y=[float(np.array(iny_df[x])[0]) for x in months],name=name_campo,showlegend=False)
-#     )
-#     años=np.arange(2017,2022)
-#     old=np.array([0,0,0,0,0])
-#     fig.update_layout(margin=dict(t=50,l=50,b=50,r=50)
-#                       ,hoverlabel=dict(
-#                         # bgcolor="white",
-#                         font_size=12,
-#                         font_family="Poppins"),
-#                     title_text='Volúmenes de agua (bbl) - '+name_campo,
-#                     title_x = 0.5,
-#                     font_family="Poppins")
-#     # fig.update_yaxes(tickvals=np.arange(0,300000000+1,50000000))
-#     # fig.update_xaxes(tickvals=años)
-#     fig.update_xaxes(tickangle=45)
-#     return fig
+    fig.add_trace(
+        go.Scatter(x=months,y=[float(np.array(iny_df[x])[0]) for x in months],name=name_campo,showlegend=False)
+    )
+    años=np.arange(2017,2022)
+    old=np.array([0,0,0,0,0])
+    fig.update_layout(margin=dict(t=50,l=50,b=50,r=50)
+                      ,hoverlabel=dict(
+                        # bgcolor="white",
+                        font_size=12,
+                        font_family="Poppins"),
+                    title_text='Volúmenes de agua (bbl) - '+name_campo,
+                    title_x = 0.5,
+                    font_family="Poppins")
+    # fig.update_yaxes(tickvals=np.arange(0,300000000+1,50000000))
+    # fig.update_xaxes(tickvals=años)
+    fig.update_xaxes(tickangle=45)
+    return fig
 
 
 # def iny(n_clsick,TINY):
