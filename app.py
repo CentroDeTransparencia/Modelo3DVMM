@@ -777,7 +777,7 @@ app.layout = html.Div(
                 id="loading-1",
                 type="cube",
                 fullscreen=True,
-                style={'backgroundColor': 'black','opacity':'0.4'},
+                style={'background-image': 'url(https://cnnespanol.cnn.com/wp-content/uploads/2022/07/220713165438-rba-web-nasa-full-169.jpg)','opacity':'1'},
                 children=html.Div(id="loading-output-1"),
                 debug=False,
                 loading_state={'component_name':'Cargando...',
