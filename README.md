@@ -1,7 +1,7 @@
 # Modelo3DVMM
 ### Centro de Transparencia
 ### Universidad Naciona de Colombia - Agencia Nacional de Hidrocarburos -  Ministerio de Minas y Energía
-El modelo permite visualizar en un espacio de tres dimensiones los datos e información que se enmarcan dentro de la región del Valle Medio del Magdalena, relacionados con la localización del los Proyectos Piloto de Investigación Integral (PPII). 
+El modelo permite visualizar en un espacio de tres dimensiones los datos e información que se enmarcan dentro de la región del Valle Medio del Magdalena, relacionados con la localización de los Proyectos Piloto de Investigación Integral (PPII). 
 
 La información se enmarca dentro de un volumen entre las coordenadas de latitud 9° N y 6.5° S, longitud 73° W y 74.4° W; y elevación entre -32000 y 10000 metros sobre el nivel del mar (msnm).
 
