@@ -20,12 +20,6 @@ from M3DVMM.general import *
 warnings.filterwarnings('ignore')
 pd.options.mode.chained_assignment = None 
 
-#Area del estudio
-los=-73
-loi=-74.4
-lai=6.5
-las=9
-
 #Geologia superficial
 df_geos=pd.read_csv('datasets/geo_unit_sup.csv')
 
