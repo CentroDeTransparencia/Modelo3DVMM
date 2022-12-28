@@ -257,6 +257,7 @@ def rotate(origin, point, angle):
 def profile(x1,x2,y1,y2,df_sismos_1,types,):
     """
     Función para generar df con los sismos y/o pozos adentro de un perfil de grosor 0.1°
+    Mejorar
     """
     x=[x1,x2]
     y=[y1,y2]
